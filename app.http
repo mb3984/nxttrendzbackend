@@ -1,0 +1,23 @@
+POST http://localhost:4000/register
+Content-Type: application/json
+
+{
+    "name":"madhu",
+    "email":"madhu@gmail.com",
+    "password":"madhu12"
+}
+
+
+###
+POST http://localhost:4000/login/
+Content-Type: application/json
+
+{
+    "email":"madhu@gmail.com",
+    "password":"madhu12"
+}
+
+###
+GET http://localhost:4000/getUserData/670c751989f034ee02003f82
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBjNzUxOTg5ZjAzNGVlMDIwMDNmODIiLCJpYXQiOjE3Mjg4Njk3MzB9.7BxrtoHlSgcEUVKOAlTAojnX85P6W3covsvJEkVCItI
+
