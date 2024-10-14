@@ -8,7 +8,13 @@ const jwt = require("jsonwebtoken");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+
+// CORS configuration
+const corsOptions = {
+  origin: "http://localhost:3004", // Specify your frontend's origin
+  credentials: true, // Allow credentials to be included in CORS requests
+};
+app.use(cors(corsOptions));
 
 const PORT = process.env.PORT || 4000; // Render provides its own PORT or use 4000 locally
 
@@ -130,8 +136,9 @@ app.get(
   }
 );
 
+// Welcome route
 app.use("/", (req, res) => {
-  res.send(" Welcome to Nxttrendz Backend Project Madhu");
+  res.send("Welcome to Nxttrendz Backend Project Madhu");
 });
 
 module.exports = app;
