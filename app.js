@@ -10,7 +10,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-const PORT = process.env.PORT || 4000; // Vercel provides its own PORT
+const PORT = process.env.PORT || 4000; // Render provides its own PORT or use 4000 locally
 
 let client;
 const initializeDBAndServer = async () => {
@@ -38,7 +38,7 @@ const authenticateToken = (request, response, next) => {
   if (authHeader) {
     const jwtToken = authHeader.split(" ")[1];
     jwt.verify(jwtToken, process.env.JWT_SECRET, (error, payload) => {
-      // Use JWT_SECRET from env
+      // Use JWT_SECRET from environment variables
       if (error) {
         console.log("JWT verification error:", error);
         return response.status(401).send({ error: "Invalid JWT Token" });
@@ -129,5 +129,9 @@ app.get(
     }
   }
 );
+
+app.use("/", (req, res) => {
+  res.send(" Welcome to Nxttrendz");
+});
 
 module.exports = app;
