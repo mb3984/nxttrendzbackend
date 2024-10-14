@@ -131,7 +131,7 @@ app.get(
 );
 
 app.use("/", (req, res) => {
-  res.send(" Welcome to Nxttrendz");
+  res.send(" Welcome to Nxttrendz Backend Project Madhu");
 });
 
 module.exports = app;
