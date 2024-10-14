@@ -18,6 +18,6 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:4000/getUserData/670caee0f3cc217ba8df8e94
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBjYWVlMGYzY2MyMTdiYThkZjhlOTQiLCJpYXQiOjE3Mjg4ODUzODIsImV4cCI6MTcyODg4ODk4Mn0.9olMCHixo0hqwlRXyPwphgAGpN5a-0UdhES44nP-ZRU
+GET http://localhost:4000/getUserData/670cb55d0f5eb1cfb2e18074
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NzBjYjU1ZDBmNWViMWNmYjJlMTgwNzQiLCJpYXQiOjE3Mjg4ODYxMTB9.UiaLzLnPO2RbgUdGYkfz55aKWNTzO5lwufUmtwiuX-U
 
