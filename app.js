@@ -3,7 +3,7 @@ require("dotenv").config(); // Load environment variables from .env
 const express = require("express");
 const { ObjectId, MongoClient } = require("mongodb");
 const cors = require("cors");
-const bcrypt = require("bcrypt");
+const bcryptjs = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const app = express();
@@ -60,7 +60,7 @@ app.post("/register", async (request, response) => {
     const isUserExist = await collection.findOne({ email });
 
     if (!isUserExist) {
-      const hashedPassword = await bcrypt.hash(userDetails.password, 10);
+      const hashedPassword = await bcryptjs.hash(userDetails.password, 10);
       userDetails.password = hashedPassword;
       const result = await collection.insertOne(userDetails);
       response.status(200).send({
@@ -91,7 +91,7 @@ app.post("/login", async (request, response) => {
         .send({ errorMsg: "User with this Email ID doesn't exist" });
     }
 
-    const isPasswordMatched = await bcrypt.compare(password, user.password);
+    const isPasswordMatched = await bcryptjs.compare(password, user.password);
     if (isPasswordMatched) {
       const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET); // Sign token using JWT_SECRET
       response.status(200).send({ jwtToken: token, userId: user._id });
