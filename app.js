@@ -10,7 +10,7 @@ app.use(express.json());
 
 // CORS configuration
 const corsOptions = {
-  origin: "http://localhost:3004", // Specify your frontend's origin
+  origin: ["http://localhost:3004", "https://nxttrendzfrontend.vercel.app"], // Specify your frontend's origins
   credentials: true, // Allow credentials to be included in CORS requests
 };
 app.use(cors(corsOptions));
