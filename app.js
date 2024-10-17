@@ -83,7 +83,7 @@ app.post("/register", async (request, response) => {
 });
 
 // Route for user login
-app.post("/login", async (request, response) => {
+app.post("/login/", async (request, response) => {
   try {
     const collection = client.db("authentication").collection("users");
     const { email, password } = request.body;
